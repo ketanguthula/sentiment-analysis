@@ -1,0 +1,11 @@
+touch requirements.txt
+touch .env.example
+touch configs/config.yaml
+touch src/preprocess.py
+touch src/train.py
+touch src/evaluate.py
+touch src/app.py
+touch tests/test_preprocess.py
+touch tests/test_model.py
+touch tests/test_interface.py
+touch README.md
