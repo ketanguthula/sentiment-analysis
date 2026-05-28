@@ -1,0 +1,28 @@
+data:
+  raw_path: data/raw/training.1600000.processed.noemoticon.csv
+  sample_path: data/sample/sentiment140_sample.csv
+  text_column: text
+  target_column: target
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  lowercase: true
+  remove_urls: true
+  remove_mentions: true
+  remove_special_chars: true
+  max_features: 30000
+  ngram_range: [1, 1]
+
+model:
+  type: logistic_regression
+  C: 1.0
+  max_iter: 1000
+  class_weight: null
+
+training:
+  use_sample: true
+  primary_metric: f1
+
+mlflow:
+  experiment_name: sentiment140_experiments
