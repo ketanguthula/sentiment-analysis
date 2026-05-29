@@ -1,32 +1,62 @@
-import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import f1_score
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+
+from src.preprocess import build_vectorizer, clean_text_series, load_sentiment140_data
 
 
-def test_accuracy_is_valid_range():
-    accuracy = 0.71
-
-    assert 0.0 <= accuracy <= 1.0
+DATA_PATH = "data/sample/sentiment140_sample.csv"
 
 
-def test_precision_is_valid_range():
-    precision = 0.72
+def train_tiny_model():
+    df = load_sentiment140_data(DATA_PATH).sample(1000, random_state=42)
+    df["clean_text"] = clean_text_series(df["text"])
 
-    assert 0.0 <= precision <= 1.0
+    X = df["clean_text"]
+    y = df["target"]
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y,
+    )
+
+    pipeline = Pipeline(
+        steps=[
+            ("vectorizer", build_vectorizer(max_features=5000, ngram_range=(1, 1))),
+            ("model", LogisticRegression(max_iter=500)),
+        ]
+    )
+
+    pipeline.fit(X_train, y_train)
+
+    return pipeline, X_test, y_test
 
 
-def test_recall_is_valid_range():
-    recall = 0.70
+def test_model_predictions_have_correct_shape():
+    model, X_test, y_test = train_tiny_model()
 
-    assert 0.0 <= recall <= 1.0
+    predictions = model.predict(X_test)
 
-
-def test_f1_is_valid_range():
-    f1 = 0.71
-
-    assert 0.0 <= f1 <= 1.0
+    assert predictions.shape[0] == y_test.shape[0]
 
 
-def test_prediction_shape_matches_input():
-    predictions = np.array([0, 1, 1, 0])
-    inputs = np.array([1, 2, 3, 4])
+def test_model_predictions_are_binary():
+    model, X_test, _ = train_tiny_model()
 
-    assert len(predictions) == len(inputs)
+    predictions = model.predict(X_test)
+
+    assert set(predictions).issubset({0, 1})
+
+
+def test_model_meets_minimum_f1_threshold():
+    model, X_test, y_test = train_tiny_model()
+
+    predictions = model.predict(X_test)
+    score = f1_score(y_test, predictions)
+
+    assert score >= 0.55

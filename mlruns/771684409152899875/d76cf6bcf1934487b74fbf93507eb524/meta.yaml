@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/ketanguthula/Documents/sentiment-analysis/mlruns/771684409152899875/d76cf6bcf1934487b74fbf93507eb524/artifacts
+end_time: 1780002748110
+entry_point_name: ''
+experiment_id: '771684409152899875'
+lifecycle_stage: active
+run_id: d76cf6bcf1934487b74fbf93507eb524
+run_name: unique-hog-199
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780002746356
+status: 3
+tags: []
+user_id: ketanguthula

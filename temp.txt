@@ -1,11 +1,5 @@
-touch requirements.txt
-touch .env.example
-touch configs/config.yaml
-touch src/preprocess.py
-touch src/train.py
-touch src/evaluate.py
-touch src/app.py
-touch tests/test_preprocess.py
-touch tests/test_model.py
-touch tests/test_interface.py
-touch README.md
+python src/train.py configs/experiments/logreg_baseline.yaml
+python src/train.py configs/experiments/logreg_c05.yaml
+python src/train.py configs/experiments/logreg_c2.yaml
+python src/train.py configs/experiments/logreg_unigrams.yaml
+python src/train.py configs/experiments/linear_svc.yaml

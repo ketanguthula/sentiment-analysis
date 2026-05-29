@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/ketanguthula/Documents/sentiment-analysis/mlruns/771684409152899875/c8d383b996874b5f8933c75ed4042254/artifacts
+end_time: 1780007339172
+entry_point_name: ''
+experiment_id: '771684409152899875'
+lifecycle_stage: active
+run_id: c8d383b996874b5f8933c75ed4042254
+run_name: luminous-shad-408
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780007337383
+status: 3
+tags: []
+user_id: ketanguthula

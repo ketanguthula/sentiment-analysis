@@ -11,7 +11,9 @@ src/monitor_drift.py
 
 The drift monitoring script should be executed regularly in production. A reasonable starting point would be daily or weekly monitoring, depending on application traffic volume.
 
-Organizations with high-volume text streams may choose to monitor drift continuously through automated scheduled jobs.
+## Script Output
+
+The drift script is designed to exit with a nonzero status when drift exceeds the configured threshold.
 
 ## Retraining Strategy
 

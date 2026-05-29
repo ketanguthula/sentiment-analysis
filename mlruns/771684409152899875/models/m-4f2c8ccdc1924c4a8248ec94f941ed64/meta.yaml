@@ -1,0 +1,10 @@
+artifact_location: file:///Users/ketanguthula/Documents/sentiment-analysis/mlruns/771684409152899875/models/m-4f2c8ccdc1924c4a8248ec94f941ed64/artifacts
+creation_timestamp: 1780002720031
+experiment_id: '771684409152899875'
+last_updated_timestamp: 1780002721473
+model_id: m-4f2c8ccdc1924c4a8248ec94f941ed64
+model_type: null
+name: model
+source_run_id: 75698d66b54b4d9bbb7cc34f8e3d9234
+status: 2
+status_message: null

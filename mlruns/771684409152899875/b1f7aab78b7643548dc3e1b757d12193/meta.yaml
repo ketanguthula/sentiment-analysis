@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/ketanguthula/Documents/sentiment-analysis/mlruns/771684409152899875/b1f7aab78b7643548dc3e1b757d12193/artifacts
+end_time: 1780002689641
+entry_point_name: ''
+experiment_id: '771684409152899875'
+lifecycle_stage: active
+run_id: b1f7aab78b7643548dc3e1b757d12193
+run_name: upbeat-skink-113
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780002687876
+status: 3
+tags: []
+user_id: ketanguthula

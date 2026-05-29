@@ -1,0 +1,8 @@
+artifact_location: file:///Users/ketanguthula/Documents/sentiment-analysis/mlruns/771684409152899875
+creation_time: 1780001508506
+experiment_id: '771684409152899875'
+last_update_time: 1780001508506
+lifecycle_stage: active
+name: sentiment140_experiments
+trace_location: null
+workspace: default
