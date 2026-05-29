@@ -220,3 +220,7 @@ __marimo__/
 
 data/raw/*
 !data/raw/*.dvc
+
+mlruns/
+models/
+reports/
